@@ -33,8 +33,9 @@ class App extends Component {
   }
 
   deleteTodo(index) {
-    this.setState({ todos: this.state.todos.filter()})
-   }
+    this.state.todos.filter( (todo) => { return todo !== this.state.todos[index] } )
+  }
+
 
   render() {
     return (
@@ -52,7 +53,6 @@ class App extends Component {
         <form onSubmit={ (e) => this.handleSubmit(e) }>
           <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
           <input type="submit" />
-          <button type="delete" />
         </form>
       </div>
     );
